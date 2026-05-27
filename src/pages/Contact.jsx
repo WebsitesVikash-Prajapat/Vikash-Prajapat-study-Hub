@@ -136,7 +136,7 @@ export default function Contact() {
               </p>
 
               <a
-                href='https://wa.me/919024895686'
+                href='https://wa.me/919024895687'
                 target='_blank'
                 rel='noreferrer'
                 style={{
