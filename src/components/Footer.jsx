@@ -111,7 +111,7 @@ export default function Footer() {
           </p>
 
           <p style={textStyle}>
-            📧 vikashkalota63@gmail.com
+            📧 vikashkalota@gmail.com
           </p>
 
           <p style={textStyle}>

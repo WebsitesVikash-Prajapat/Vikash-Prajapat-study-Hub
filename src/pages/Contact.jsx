@@ -136,7 +136,7 @@ export default function Contact() {
               </p>
 
               <a
-                href='https://wa.me/919024895687'
+                href='https://wa.me/919024895686'
                 target='_blank'
                 rel='noreferrer'
                 style={{
@@ -198,7 +198,7 @@ export default function Contact() {
                 background: 'rgba(255,255,255,0.45)'
               }}
             >
-              <h2 style={{ color: '#111' }}>
+              <h2 style={{ color: '#e01717' }}>
                 Email 📧
               </h2>
 
@@ -208,7 +208,7 @@ export default function Contact() {
                   color: '#333'
                 }}
               >
-                vikashstudyhub@gmail.com
+                websitesvikash@gmail.com
               </p>
 
               <Btn
