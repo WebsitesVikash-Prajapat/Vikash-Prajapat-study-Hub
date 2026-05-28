@@ -13,7 +13,7 @@ export default function Home({ setPage }) {
   ];
 
   const stats = [
-    { title: 'Students', value: '50,000+' },
+    { title: 'Students', value: '50,00000+' },
     { title: 'PDFs', value: '10,000+' },
     { title: 'Subjects', value: '500+' }
   ];
@@ -56,7 +56,7 @@ export default function Home({ setPage }) {
               whiteSpace: 'nowrap'
             }}
           >
-            VIKASH PRAJAPAT
+          
           </div>
         ))}
       </div>
@@ -97,7 +97,7 @@ export default function Home({ setPage }) {
             }}
           >
             Hi 👋 <br />
-            My Name:- VIKASH PRAJAPAT
+            My Name:-VIKASH PRAJAPAT
           </h1>
 
           <h2
