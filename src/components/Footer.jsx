@@ -176,7 +176,7 @@ export default function Footer() {
         All Rights Reserved
       </div>
       <div>
-       © VIKASH PRAJAPAT  VISHAL PRAJAPAT SAPNA PRAJAPAT  JYOTI PRAJAPAT
+                                    Founder:- © VIKASH PRAJAPAT  
 
       </div>
     </footer>
