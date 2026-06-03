@@ -61,6 +61,7 @@ export default function Footer() {
               gap: "10px",
             }}
           >
+            <a href="/VIKASH PRAJAPAT" style={linkStyle}>VIKASH PRAJAPA</a>
             <a href="/" style={linkStyle}>Home</a>
             <a href="/notes" style={linkStyle}>Notes</a>
             <a href="/pyqs" style={linkStyle}>PYQs</a>
