@@ -185,3 +185,24 @@ const socialBtn = {
   textDecoration: "none",
   fontWeight: "bold",
 };
+
+
+<div style={{ marginTop: "15px" }}>
+  <label
+    style={{
+      background: "#FFD700",
+      padding: "10px 15px",
+      borderRadius: "10px",
+      cursor: "pointer",
+      color: "#000",
+      fontWeight: "bold"
+    }}
+  >
+    📸 Upload Profile Photo
+    <input
+      type="file"
+      accept="image/*"
+      style={{ display: "none" }}
+    />
+  </label>
+</div>

@@ -92,3 +92,115 @@ export default function AIChatBox() {
     </div>
   );
 }
+import React, { useState } from "react";
+
+export default function AIChatBox() {
+  const [message, setMessage] = useState("");
+  const [reply, setReply] = useState("");
+
+  const startVoice = () => {
+    const SpeechRecognition =
+      window.SpeechRecognition ||
+      window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert("Speech Recognition not supported");
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+    recognition.lang = "hi-IN";
+
+    recognition.onresult = (event) => {
+      const text = event.results[0][0].transcript;
+      setMessage(text);
+      sendToAI(text);
+    };
+
+    recognition.start();
+  };
+
+  const speak = (text) => {
+    const speech = new SpeechSynthesisUtterance(text);
+    speech.lang = "hi-IN";
+    window.speechSynthesis.speak(speech);
+  };
+
+  const sendToAI = async (userMessage) => {
+    try {
+      const response = await fetch("/api/chat", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: userMessage,
+        }),
+      });
+
+      const data = await response.json();
+
+      setReply(data.reply);
+      speak(data.reply);
+    } catch (error) {
+      console.error(error);
+      setReply("AI server not connected.");
+    }
+  };
+
+  return (
+    <div
+      style={{
+        maxWidth: "700px",
+        margin: "30px auto",
+        padding: "20px",
+        borderRadius: "15px",
+        background: "#111",
+        color: "#fff",
+      }}
+    >
+      <h2>🤖 Vikash AI Assistant</h2>
+
+      <textarea
+        value={message}
+        onChange={(e) => setMessage(e.target.value)}
+        placeholder="Question pucho..."
+        rows="4"
+        style={{
+          width: "100%",
+          padding: "10px",
+          borderRadius: "10px",
+        }}
+      />
+
+      <div
+        style={{
+          display: "flex",
+          gap: "10px",
+          marginTop: "10px",
+        }}
+      >
+        <button onClick={() => sendToAI(message)}>
+          🚀 Send
+        </button>
+
+        <button onClick={startVoice}>
+          🎤 Voice
+        </button>
+      </div>
+
+      <div
+        style={{
+          marginTop: "20px",
+          padding: "15px",
+          background: "#222",
+          borderRadius: "10px",
+        }}
+      >
+        <strong>AI Reply:</strong>
+        <br />
+        {reply}
+      </div>
+    </div>
+  );
+}
