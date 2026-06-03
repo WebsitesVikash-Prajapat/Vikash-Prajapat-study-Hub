@@ -13,7 +13,7 @@ export default function Home({ setPage }) {
   ];
 
   const stats = [
-    { title: 'Students', value: '50,00000+' },
+    { title: 'Students', value: '50,000+' },
     { title: 'PDFs', value: '10,000+' },
     { title: 'Subjects', value: '500+' }
   ];
