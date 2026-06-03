@@ -1,6 +1,7 @@
 // FILE: src/pages/Home.jsx
 
 import React from 'react';
+import Game from "../components/Game";
 import { PageShell, GlassCard, Btn, Input } from '../components/UI';
 
 export default function Home({ setPage }) {
@@ -26,22 +27,21 @@ export default function Home({ setPage }) {
   ];
 
   return (
-    <PageShell>
+  <PageShell>
 
-      {/* 🔥 MOVING BACKGROUND NAME */}
+    <Game />
 
-      <div
-        style={{
-          position: 'fixed',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          overflow: 'hidden',
-          zIndex: 0,
-          pointerEvents: 'none'
-        }}
-      >
+    {/* 🔥 MOVING BACKGROUND NAME */}
+
+    <div
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+      }}
+    >
         {[...Array(20)].map((_, i) => (
           <div
             key={i}
@@ -307,3 +307,5 @@ export default function Home({ setPage }) {
     </PageShell>
   );
 }
+
+
